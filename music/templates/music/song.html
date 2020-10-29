@@ -1,0 +1,16 @@
+<html>
+<head>
+<title>Create a Post </title>
+</head>
+
+<body>
+<h1>Insert Song Table </h1>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    {{songinfo}}
+    <input type="submit" name='submit'>
+</form>
+</body>
+
+</html>

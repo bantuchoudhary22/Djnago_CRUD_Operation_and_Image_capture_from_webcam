@@ -1,0 +1,74 @@
+<html>
+<head>
+    <title> All Table Data </title>
+</head>
+<body>
+
+
+<Table border=" 2" width="400" >
+    
+    <h2>Album Table</h2>
+   <tr>
+     <td> artist</td>
+     <td> genre</td>
+     <td> album_name</td>
+     <td> Update </td>
+     <td>Delete</td>
+    </tr>     
+    {% for i in album %}
+      <tr>
+      <td> {{i.artist}} </td> 
+      <td> {{i.genre}}  </td>
+      <td>  {{i.album_name}} </td>
+       <td> <a  href="{%url 'update_album' i.id%}">Update</a> </td>
+
+        <td> <a href="{%url 'deletealbum' i.id %}">Delete</a> </td>
+      </tr>
+    {% endfor %}
+
+  </Table>
+
+<Table border="2" width="400">
+<h2>Song Table</h2>
+<tr>
+<td  > file_type </td>
+<td> song_name</td>
+<td> Update </td>
+<td>Delete</td>
+  </tr>
+{% for i in songs %}
+  <tr>
+   <td>  {{i.file_type}}  </td>
+   <td> {{i.song_name}} </td>
+   <td> <a href="{%url 'update_song' i.id%}"> Update</a> </td>
+   <td> <a href="#">  Delete</a></td>
+  </tr>
+    {% endfor %}
+  </Table>
+
+  <Table border="2" width="400">
+
+    <h2> All Registration  </h2>
+    <tr>
+    <td  > first_name </td>
+    <td> last_name</td>
+    <td> email </td>
+    <td>update</td>
+    <td>delete</td>
+      </tr>
+    {% for i in registers %}
+      <tr>
+       <td>  {{i.first_name}}  </td>
+       <td> {{i.last_name}} </td>
+       <td> {{i.email}} </td>
+       
+
+       <td> <a href="#"> Update</a> </td>
+       <td> <a href="#">  Delete</a></td>
+      </tr>
+        {% endfor %}
+  </Table>    
+ 
+</body>
+
+</html>

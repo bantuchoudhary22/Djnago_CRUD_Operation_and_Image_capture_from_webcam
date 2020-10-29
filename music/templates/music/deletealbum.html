@@ -1,0 +1,17 @@
+<html>
+<head>
+    <title> Delete</title>
+</head>
+<body>
+    
+<p> Sure You want to delete  {{form}}  </p>
+
+<form  action="{% url 'deletealbum' form.id %}"  method="POST">
+    {%csrf_token%}
+    <a href= "{%url 'all' %}" > Cancel</a>
+    <input type="submit" name="confirm"> 
+
+</form>
+
+</body>
+</html>
